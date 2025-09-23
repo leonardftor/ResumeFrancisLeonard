@@ -1,88 +1,277 @@
-# ResumeFrancisLeonard
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Your Name] — Director, Technical Program Management</title>
+  <meta name="description" content="Director-level Technical Program Management resume — cloud migrations, program governance, roadmaps, budgeting, risk management." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#4f46e5; --accent-2:#06b6d4; --text:#e6eef6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    [data-theme='light']{ --bg:#f6f8fb; --card:#ffffff; --muted:#4b5563; --accent:#4338ca; --accent-2:#0891b2; --text:#0b1220; --glass: rgba(11,18,32,0.03);} 
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--text);background:linear-gradient(180deg,var(--bg), #071020);}
+    .container{max-width:980px;margin:28px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:var(--accent);}
+    h1{margin:0;font-size:22px}
+    .sub{color:var(--muted);margin-top:6px}
+    .top-right{margin-left:auto;text-align:right}
+    .title-pill{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:6px 10px;border-radius:999px;color:white;font-weight:600}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:22px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr;}.top-right{text-align:left;margin-left:0}}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .section-title{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:6px 10px;border-radius:8px;color:var(--muted);font-size:13px}
+
+    .exp{margin-bottom:14px}
+    .exp h3{margin:0;font-size:15px}
+    .meta{color:var(--muted);font-size:13px}
+    .bullets{margin:8px 0 0 18px}
+    .bullets li{margin:6px 0;line-height:1.45}
+
+    .edu, .certs{display:flex;flex-direction:column;gap:8px}
+    .skill-bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:6px;overflow:hidden}
+    .skill-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 10px;border-radius:8px;cursor:pointer}
+    .download{background:var(--accent);border:0;padding:8px 12px;color:white}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Collapsible animation */
+    details summary{list-style:none;cursor:pointer}
+    details[open] summary::after{content:'▲';float:right}
+    details summary::after{content:'▼';float:right;color:var(--muted)}
+
+    /* print friendly */
+    @media print{body{background:white;color:black} .container{box-shadow:none;border-radius:0} .top-right{display:none} }
+  </style>
 </head>
 <body>
+  <div class="container" role="main">
+    <header>
+      <div class="avatar" aria-hidden="true">LF</div>
+      <div>
+        <h1 id="name">[Your Full Name]</h1>
+        <div class="sub">Director, Technical Program Management • Cloud Transformation • Program Governance</div>
+        <div class="sub">Toronto, ON • <a id="email" href="mailto:you@example.com">you@example.com</a> • <a id="linkedin" href="#">linkedin.com/in/yourprofile</a></div>
+      </div>
+      <div class="top-right">
+        <div class="title-pill">Director, Technical Program Management</div>
+        <div style="height:10px"></div>
+        <div class="controls">
+          <button id="themeToggle" title="Toggle theme">Toggle theme</button>
+          <button class="download" id="downloadBtn">Download PDF</button>
+        </div>
+      </div>
+    </header>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">MyPortfolio</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="resume.pdf" class="btn" download>Download Resume</a>
-  </nav>
+    <main class="grid">
+      <section>
+        <div class="card" id="summary">
+          <div class="section-title">Summary</div>
+          <p><strong>Senior program leader with 15+ years of experience</strong> driving end-to-end program planning, execution, and governance across financial services and enterprise technology. Proven success in building and delivering program roadmaps, managing multi-workstream dependencies, overseeing budgets and forecasts, and enabling cloud migrations and systems integration. Skilled at executive stakeholder management and building high-performing teams.</p>
+        </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1 class="fade-in">Hi, I'm <span>Your Name</span></h1>
-    <p class="fade-in delay">Project Manager | Tech Leader | Innovator</p>
-    <a href="#contact" class="btn fade-in delay2">Hire Me</a>
-  </section>
+        <div class="card" style="margin-top:16px" id="experience">
+          <div class="section-title">Experience</div>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I’m a results-driven professional with expertise in technology, leadership, and business transformation. My goal is to deliver high-impact results through innovation and collaboration.</p>
-  </section>
+          <div class="exp">
+            <h3>Senior Scrum Master / Technical Delivery Lead — TD Bank Group</h3>
+            <div class="meta">Toronto, ON • Feb 2022 – Present</div>
+            <ul class="bullets">
+              <li>Directed end-to-end program planning and execution across multiple Agile pods, delivering on committed OKRs with 99% efficiency.</li>
+              <li>Facilitated Scrum/SAFe ceremonies and established program governance, roadmaps, and dependency tracking to enable timely releases.</li>
+              <li>Partnered with Product and Architecture to align roadmaps, supported budgeting & forecasting, and implemented risk registers to reduce critical escalations.</li>
+            </ul>
+          </div>
 
-  <!-- Experience -->
-  <section id="experience" class="section">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Assistant Vice President</h3>
-      <p>Company Name | 2020 – Present</p>
-      <ul>
-        <li>Led cross-functional teams delivering enterprise solutions.</li>
-        <li>Improved efficiency by 25% through process automation.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Project Manager</h3>
-      <p>Company Name | 2016 – 2020</p>
-      <ul>
-        <li>Delivered projects on-time and under budget.</li>
-        <li>Championed digital transformation initiatives.</li>
-      </ul>
-    </div>
-  </section>
+          <div class="exp">
+            <h3>Senior Business Systems Analyst / Scrum Master — CIBC</h3>
+            <div class="meta">Toronto, ON • May 2018 – Feb 2022</div>
+            <details>
+              <summary>Key responsibilities & achievements</summary>
+              <ul class="bullets">
+                <li>Served as Scrum Master for up to three cross-functional teams delivering multi-workstream systems integration and credit adjudication programs.</li>
+                <li>Produced BRDs, use case diagrams, data models and executive reporting to support governance and decision-making.</li>
+                <li>Managed hybrid Agile/Waterfall delivery and improved on-time execution of milestones and dependencies.</li>
+              </ul>
+            </details>
+          </div>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>Leadership</span>
-      <span>Project Management</span>
-      <span>Agile/Scrum</span>
-      <span>Data Visualization</span>
-      <span>Python</span>
-      <span>Cloud (AWS, Azure)</span>
-    </div>
-  </section>
+          <div class="exp">
+            <h3>Advisory Application Developer — CIBC</h3>
+            <div class="meta">Toronto, ON • Aug 2015 – May 2018</div>
+            <ul class="bullets">
+              <li>L3 support for contact center systems; delivered .NET desktop services and supported ECCO data transfer initiatives.</li>
+            </ul>
+          </div>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-  </section>
+          <div class="exp">
+            <h3>Senior Business Systems Analyst — IFDS</h3>
+            <div class="meta">Toronto, ON • Apr 2015 – Aug 2015</div>
+            <ul class="bullets">
+              <li>Built reusable knowledge assets and dashboards that improved productivity by 20%.</li>
+            </ul>
+          </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Your Name | Built with ❤️</p>
-  </footer>
+          <div class="exp">
+            <h3>Senior Manager, Business Analyst — Mashreq Bank</h3>
+            <div class="meta">Dubai, UAE • Aug 2004 – Sep 2013</div>
+            <ul class="bullets">
+              <li>Directed IVR and contact center transformation programs; increased sales by 25% through segmentation programs and Lean/Six Sigma practices.</li>
+            </ul>
+          </div>
 
-  <script src="script.js"></script>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="education">
+          <div class="section-title">Education</div>
+          <div class="edu">
+            <div><strong>M.Sc. Information Systems</strong> — University of Colorado, Boulder, CO <span class="meta">(Apr 2024)</span></div>
+            <div><strong>Diploma, Software Engineering (with Distinction)</strong> — Canadian Business College, Toronto, ON <span class="meta">(Jul 2015)</span></div>
+            <div><strong>BBA, Commerce (GPA: 3.20)</strong> — Karachi University, Pakistan <span class="meta">(Aug 1998)</span></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px" id="certifications">
+          <div class="section-title">Certifications</div>
+          <div class="certs">
+            <div>Certified AWS Cloud Practitioner</div>
+            <div>SAFe Advanced Scrum Master — Scaled Agile INC</div>
+            <div>PSM (Professional Scrum Master) — Scrum.org</div>
+            <div>Certified Pega Business System Architect v8.5 (2021)</div>
+            <div>Advanced Data Science & Predictive Analytics — York University (2020)</div>
+            <div>Certified Scrum Master — Scrum Alliance (since 2018)</div>
+            <div>CBAP — IIBA (Membership ID: 114178, 2017)</div>
+            <div>MCSA: SQL Server (F238-3215, 2015)</div>
+            <div>PMP • PgMP • SAFe Agilist</div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">Core Skills</div>
+          <div class="skills" id="skills">
+            <span class="skill">Program Leadership</span>
+            <span class="skill">End-to-End Program Planning</span>
+            <span class="skill">Program Roadmaps</span>
+            <span class="skill">Program Governance</span>
+            <span class="skill">Budgeting & Forecasting</span>
+            <span class="skill">Risk & Issue Management</span>
+            <span class="skill">Cloud Migration (Azure/AWS)</span>
+            <span class="skill">Systems Integration</span>
+            <span class="skill">Agile / SAFe / Scrum</span>
+            <span class="skill">JIRA • Confluence</span>
+            <span class="skill">Power BI • Tableau</span>
+            <span class="skill">Stakeholder Management</span>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="section-title">Skills (visual)</div>
+            <div><small class="meta">Program Leadership</small>
+              <div class="skill-bar"><div class="skill-fill" data-fill="92"></div></div>
+            </div>
+            <div style="margin-top:8px"><small class="meta">Cloud Migration</small>
+              <div class="skill-bar"><div class="skill-fill" data-fill="82"></div></div>
+            </div>
+            <div style="margin-top:8px"><small class="meta">Governance & Reporting</small>
+              <div class="skill-bar"><div class="skill-fill" data-fill="88"></div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <div class="section-title">Quick Git + GitHub Pages</div>
+          <ol style="margin:0 0 0 18px;color:var(--muted)">
+            <li>git init; git add .; git commit -m "Initial resume site"</li>
+            <li>git branch -M main</li>
+            <li>git remote add origin git@github.com:yourusername/yourusername.github.io.git</li>
+            <li>git push -u origin main</li>
+            <li>Enable GitHub Pages: use main branch root or /docs folder in repo settings</li>
+          </ol>
+          <p class="meta" style="margin-top:8px">Tip: Use a repo named <code>yourusername.github.io</code> to publish at https://yourusername.github.io</p>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div>Resume generated — update content in the HTML file, then git commit & push to publish.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Lightweight interactivity: theme toggle, skill anim, download (print)
+    (()=>{
+      const themeToggle = document.getElementById('themeToggle');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const root = document.documentElement;
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', prefersDark? 'dark' : 'light');
+      themeToggle.addEventListener('click', ()=>{
+        const current = root.getAttribute('data-theme') || 'dark';
+        root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+      });
+
+      // Skill bars animation on intersection
+      const fills = document.querySelectorAll('.skill-fill');
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            const el = e.target; const val = el.getAttribute('data-fill') || 70; el.style.width = val + '%';
+          }
+        })
+      },{threshold:0.3});
+      fills.forEach(f=>io.observe(f));
+
+      // Download -> print to PDF as simple fallback
+      downloadBtn.addEventListener('click', ()=>window.print());
+
+      // Small accessibility: keyboard focus
+      document.querySelectorAll('button').forEach(b=>b.addEventListener('keyup', e=>{ if(e.key==='Enter') b.click(); }));
+
+      // Populate placeholders (optionally can be replaced server-side)
+      document.getElementById('name').textContent = '[Your Full Name]';
+      document.getElementById('email').href = 'mailto:you@example.com';
+      document.getElementById('email').textContent = 'you@example.com';
+      document.getElementById('linkedin').href = 'https://linkedin.com/in/yourprofile';
+      document.getElementById('linkedin').textContent = 'linkedin.com/in/yourprofile';
+    })();
+  </script>
+
+  <!--
+    Deployment notes (copy into README.md):
+
+    1) Create a new GitHub repository named: yourusername.github.io  (or any repo & use gh-pages branch)
+    2) Place this index.html at the repository root (or in /docs and configure Pages to serve /docs)
+    3) From the command line:
+       git init
+       git add .
+       git commit -m "Initial commit: resume website"
+       git branch -M main
+       git remote add origin git@github.com:yourusername/yourusername.github.io.git
+       git push -u origin main
+
+    4) In GitHub, go to Settings -> Pages and select branch: main (root) to publish. Your site will be available at https://yourusername.github.io
+
+    Customization tips:
+    - Replace the [Your Full Name], contact info and social links in the header.
+    - Add a PDF to the repo and set the download link to point to it: <a href="/resume.pdf">Download PDF</a>
+    - If you want a project/history timeline, add a <section id="timeline"> and style accordingly.
+
+  -->
 </body>
 </html>
